@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #movingButton {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var button = document.getElementById("movingButton");
+
+      button.addEventListener("mouseover", function() {
+        moveButton();
+      });
+
+      function moveButton() {
+        var newX = Math.random() * window.innerWidth;
+        var newY = Math.random() * window.innerHeight;
+
+        button.style.left = newX + "px";
+        button.style.top = newY + "px";
+      }
+    });
+  </script>
+</head>
+<body>
+
+<button id="movingButton">Random Button</button>
+
+</body>
+</html>
